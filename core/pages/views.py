@@ -13,3 +13,5 @@ def my_profile(request):
     return render(request, 'pages/my_profile.html')  # Render the my_profile template.
 def customer_support(request):
     return render(request, 'pages/customer_support.html')  # Render the customer_support template.
+def register_user(request):
+    return render(request, 'pages/register_user.html')  # Render the register_user template.
