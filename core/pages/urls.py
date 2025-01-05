@@ -14,4 +14,5 @@ urlpatterns = [
     path('login/', views.login, name='login'),  # login
     path('about/', views.about, name='about'),  # about
     path('privacy_policy/', views.privacy_policy, name='privacy_policy'),  # privacy_policy
+    path('logout/', views.logout, name='logout'),  # logout
 ]
