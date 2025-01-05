@@ -17,3 +17,5 @@ def register_user(request):
     return render(request, 'pages/register_user.html')  # Render the register_user template.
 def login(request):
     return render(request, 'pages/login.html')  # Render the login template.
+def about(request):
+    return render(request, 'pages/about.html')  # Render the about template.
