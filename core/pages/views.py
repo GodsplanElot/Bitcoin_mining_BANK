@@ -9,3 +9,5 @@ def hashPowerAll(request):
     return render(request, 'pages/hashPowerAll.html')  # Render the hashPowerAll.
 def transaction_list(request):
     return render(request, 'pages/transaction_list.html')  # Render the transaction_list template.
+def my_profile(request):
+    return render(request, 'pages/my_profile.html')  # Render the transaction_list template.
