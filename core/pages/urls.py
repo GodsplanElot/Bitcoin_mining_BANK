@@ -12,4 +12,5 @@ urlpatterns = [
     path('customer_support/', views.customer_support, name='customer_support'),  # customer_support
     path('register_user/', views.register_user, name='register_user'),  # register_user
     path('login/', views.login, name='login'),  # login
+    path('about/', views.about, name='about'),  # about
 ]
