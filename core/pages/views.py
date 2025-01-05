@@ -6,4 +6,6 @@ def index(request):
 def dashboard(request):
     return render(request, 'pages/dashboard.html')  # Render the dashboard template.
 def hashPowerAll(request):
-    return render(request, 'pages/hashPowerAll.html')  # Render the dashboard template.
+    return render(request, 'pages/hashPowerAll.html')  # Render the hashPowerAll.
+def transaction_list(request):
+    return render(request, 'pages/transaction_list.html')  # Render the transaction_list template.
