@@ -11,4 +11,5 @@ urlpatterns = [
     path('my_profile/', views.my_profile, name='my_profile'),  # my_profile
     path('customer_support/', views.customer_support, name='customer_support'),  # customer_support
     path('register_user/', views.register_user, name='register_user'),  # register_user
+    path('login/', views.login, name='login'),  # login
 ]
