@@ -21,3 +21,5 @@ def about(request):
     return render(request, 'pages/about.html')  # Render the about template.
 def privacy_policy(request):
     return render(request, 'pages/privacy_policy.html')  # Render the privacy_policy template.
+def logout(request):
+    return render(request, 'pages/logout.html')  # Render the logout template.
