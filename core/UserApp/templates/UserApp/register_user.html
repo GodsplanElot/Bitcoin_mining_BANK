@@ -13,7 +13,8 @@
       <link rel="stylesheet" href="{% static 'pages/css/custom.min.css' %}">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-      <link href="../../../css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">  </head>
+      <link href="../../../css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
+   </head>
   <body class="" data-bs-spy="scroll" data-bs-target="#elements-section" data-bs-offset="0" tabindex="0">
     <!-- loader Start -->
     <div id="loading">
@@ -37,17 +38,20 @@
                           
                            <p class="text-center">Create an Account</p>
 
+                           <div class="row">
+                              <div class="form-floating mb-3">
+                                 <p>@username </p>
+                                 {% comment %}  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"> {% endcomment %}
+                                  {% comment %} <label for="floatingInput">Email</label> {% endcomment %}
+                                  {{ form.username }}
+                              </div>
+
                            <div class="form-floating mb-3">
+                              <p>Email </p>
                              {% comment %}  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"> {% endcomment %}
                               {% comment %} <label for="floatingInput">Email</label> {% endcomment %}
                               {{ form.email }}
                           </div>
-
-
-                           <div class="row">
-
-
-
 
                            </div>
                            <div class="row">
@@ -58,6 +62,7 @@
                            <div class="row">
                               <div class="col-md-6 mb-4">
                                   <div class="form-floating mb-2">
+                                    <p>Passowrd </p>
 {% comment %}                                         <input type="text" class="form-control" id="Password" placeholder="Password">
                                         <label for="Password">Password</label> {% endcomment %}
                                         {{ form.password1 }}
@@ -65,6 +70,7 @@
                               </div>
                               <div class="col-md-6 mb-4">
                                   <div class="form-floating mb-2">
+                                    <p>confirm password</p>
                                     {% comment %}<input type="text" class="form-control" id="confirmpassword" placeholder="confirmpassword">
                                         <label for="confirmpassword"></label>{% endcomment %}
                                         {{ form.password2 }}

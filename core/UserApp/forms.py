@@ -5,9 +5,15 @@ from django.contrib.auth.models import User
 class SignupForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ('email', 'password1', 'password2')
+        fields = ('username', 'email', 'password1', 'password2')
     
-    
+    username = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'YourUsername',
+        'class': 'form-control',
+        'id': 'floatingInput',
+    }))
+
+
     email = forms.CharField(widget=forms.EmailInput(attrs={
         'placeholder': 'email',
         'class': 'form-control',
