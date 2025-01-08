@@ -29,49 +29,45 @@
          <div class="col-lg-6 col-md-8 mt-5">
             <div class="card bg-dark">
                <div class="card-body">
-                  <div class="auth-form">
+                  <div class="auth-form">-
                         <h2 class="text-center mb-4">Sign Up</h2>
-                        <form>
-                           <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <form method="post" action=".">
+                           {% csrf_token %}
+
+                          
+                           <p class="text-center">Create an Account</p>
+
+                           <div class="form-floating mb-3">
+                             {% comment %}  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"> {% endcomment %}
+                              {% comment %} <label for="floatingInput">Email</label> {% endcomment %}
+                              {{ form.email }}
+                          </div>
+
+
                            <div class="row">
-                              <div class="col-md-6 mb-4">
-                                  <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="firstName" placeholder="FirstName">
-                                        <label for="firstName">First Name</label>
-                                    </div>
-                              </div>
-                              <div class="col-md-6 mb-4">
-                                 <div class="form-floating mb-3">
-                                        <input type="text" class="form-control" id="lastName" placeholder="lastName">
-                                        <label for="lastName">Last Name</label>
-                                 </div>
-                              </div>
+
+
+
+
                            </div>
                            <div class="row">
                               <div class="col-md-6 mb-4">
-                                  <div class="form-floating mb-3">
-                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                        <label for="floatingInput">Email</label>
-                                    </div>
-                              </div>
-                              <div class="col-md-6 mb-4">
-                                 <div class="form-floating mb-3">
-                                       <input type="text" class="form-control" id="phoneno" placeholder="phoneno">
-                                       <label for="phoneno">Phone no</label>
-                                 </div>
+                                 
                               </div>
                            </div>
                            <div class="row">
                               <div class="col-md-6 mb-4">
                                   <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="Password" placeholder="Password">
-                                        <label for="Password">Password</label>
+{% comment %}                                         <input type="text" class="form-control" id="Password" placeholder="Password">
+                                        <label for="Password">Password</label> {% endcomment %}
+                                        {{ form.password1 }}
                                     </div>
                               </div>
                               <div class="col-md-6 mb-4">
                                   <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="confirmpassword" placeholder="confirmpassword">
-                                        <label for="confirmpassword">Confirm-Password</label>
+                                    {% comment %}<input type="text" class="form-control" id="confirmpassword" placeholder="confirmpassword">
+                                        <label for="confirmpassword"></label>{% endcomment %}
+                                        {{ form.password2 }}
                                     </div>
                               </div>
                            </div>
@@ -80,8 +76,19 @@
                               <label class="ms-1 form-check-label" for="agree">I agree with the terms of
                                  use</label>
                            </div>
+
+
+                           {% if form.errors or form.non_field_errors %}
+                              {% for field in form %}
+                                 {{ field.errors }}
+                              {% endfor %}
+
+                              {{ form.non_field_errors }}
+                           {% endif %}
+
+
                            <div class="text-center">
-                              <button type="button" class="btn btn-primary">Sign Up</button>
+                              <button class="btn btn-primary">Sign Up</button>
                            </div>
                            <div class="text-center mt-3">
                               <p>or sign in with others account?</p>
@@ -104,7 +111,7 @@
                               </div>
                         </form>
                         <div class="new-account mt-3 text-center">
-                           <p>Already have an Account <a class="text-primary" href="{% url 'pages:login'%}">Sign in</a>
+                           <p>Already have an Account <a class="text-primary" href="{% url 'UserApp:login'%}">Sign in</a>
                            </p>
                         </div>
                      </div>

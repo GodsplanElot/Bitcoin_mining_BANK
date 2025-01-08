@@ -5,5 +5,6 @@ app_name = 'UserApp'
 
 urlpatterns = [
     path('register_user/', views.register_user, name='register_user'),  # register_user
+    path('login/', views.login, name='login'),  # login
 
 ]
