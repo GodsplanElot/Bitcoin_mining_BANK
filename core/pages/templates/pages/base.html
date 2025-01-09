@@ -41,7 +41,6 @@
             <div class="navbar-collapse pe-3" id="sidebar">
                 <ul class="navbar-nav iq-main-menu">
 
-
                    <!-- SIDE NAVBAR BUTTONS --> 
                     <li class="nav-item ">
                         <a class="nav-link " aria-current="page" href="{% url 'pages:index' %}">
@@ -56,6 +55,7 @@
                     <!-- SIDE NAVBAR BUTTONS --> 
 
 
+              {% if request.user.is_authenticated %}  
                    <!-- SIDE NAVBAR BUTTONS --> 
                     <li class="nav-item ">
                         <a class="nav-link " aria-current="page" href="{% url 'pages:dashboard' %}">
@@ -130,6 +130,7 @@
                         </a>
                     </li>
                     <!-- SIDE NAVBAR BUTTONS --> 
+              {% else %}
 
 
 
@@ -171,7 +172,9 @@
   
   
   
-  
+                {% endif %}
+
+                {% if request.user.is_authenticated %}  
                       <!-- SIDE NAVBAR BUTTONS --> 
                       <li class="nav-item ">
                           <a class="nav-link " aria-current="page" href="{% url 'pages:logout' %}">
@@ -184,6 +187,8 @@
                           </a>
                       </li>
                       <!-- SIDE NAVBAR BUTTONS --> 
+
+                {% else %}
 
 
 
@@ -220,6 +225,7 @@
                         </a>
                     </li>
                     <!-- SIDE NAVBAR BUTTONS --> 
+              {% endif %}
 
 
 
