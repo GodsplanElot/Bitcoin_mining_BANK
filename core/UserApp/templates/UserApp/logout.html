@@ -46,8 +46,14 @@
                                 <a href="{% url 'pages:index'%}" class="btn btn-primary">Home</a>
                                 </div>
                                 <div class="d-inline-block mt-3">
-                                <a href="{% url 'pages:login' %}" class="btn btn-primary">Sign back in ?</a>
+                                <a href="{% url 'UserApp:login' %}" class="btn btn-primary">Sign back in ?</a>
                                 </div>
+
+{% comment %}                                 <form class="d-inline-block mt-3" action="{% 'user:logout' %}" method="post">
+                                    {%  csrf_token  %}
+                                    <button> logout </button>
+                                </form> {% endcomment %}
+
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import logout
 
 from .forms import SignupForm
 
@@ -16,7 +17,7 @@ def register_user(request):
         if form.is_valid():
             form.save()
 
-            return redirect( 'UserApp/login' )
+            return redirect( '../login/' )
     else:
         form = SignupForm()
 
@@ -24,3 +25,5 @@ def register_user(request):
         'form': form
     })  # Render the register_user template.
 
+def logout(request):
+    return render(request, 'UserApp/login.html')  # Render the logout template.

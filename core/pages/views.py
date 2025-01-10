@@ -1,12 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 def index(request):
     return render(request, 'pages/index.html')  # Render the index template.
 def dashboard(request):
     return render(request, 'pages/dashboard.html')  # Render the dashboard template.
-def hashPowerAll(request):
-    return render(request, 'pages/hashPowerAll.html')  # Render the hashPowerAll.
 def transaction_list(request):
     return render(request, 'pages/transaction_list.html')  # Render the transaction_list template.
 def my_profile(request):
@@ -17,5 +15,3 @@ def about(request):
     return render(request, 'pages/about.html')  # Render the about template.
 def privacy_policy(request):
     return render(request, 'pages/privacy_policy.html')  # Render the privacy_policy template.
-def logout(request):
-    return render(request, 'pages/logout.html')  # Render the logout template.
