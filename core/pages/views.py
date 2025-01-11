@@ -1,16 +1,24 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
     return render(request, 'pages/index.html')  # Render the index template.
+
+@login_required(login_url="/login")
 def dashboard(request):
-    return render(request, 'pages/dashboard.html')  # Render the dashboard template.
+    return render(request, 'pages/dashboard.html', {'user': request.user})  # Render the dashboard template.
+@login_required(login_url="/login")
 def transaction_list(request):
     return render(request, 'pages/transaction_list.html')  # Render the transaction_list template.
+@login_required(login_url="/login")
 def my_profile(request):
     return render(request, 'pages/my_profile.html')  # Render the my_profile template.
+
+@login_required(login_url="/login")
 def customer_support(request):
     return render(request, 'pages/customer_support.html')  # Render the customer_support template.
+
 def about(request):
     return render(request, 'pages/about.html')  # Render the about template.
 def privacy_policy(request):
