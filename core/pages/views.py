@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from UserApp.models import Profile
 
 # Create your views here.
 def index(request):
@@ -7,7 +8,14 @@ def index(request):
 
 @login_required(login_url="/login")
 def dashboard(request):
-    return render(request, 'pages/dashboard.html', {'user': request.user})  # Render the dashboard template.
+    # Fetch the logged-in user's profile
+    profile = Profile.objects.get(user=request.user)
+    context = {
+        'user': request.user,  # User object
+        'profile': profile     # Profile object with balances
+    }
+    return render(request, 'pages/dashboard.html', context)  # Render the dashboard template.
+
 @login_required(login_url="/login")
 def transaction_list(request):
     return render(request, 'pages/transaction_list.html')  # Render the transaction_list template.

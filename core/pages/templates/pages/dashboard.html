@@ -145,7 +145,7 @@
                             <div class="d-flex justify-content-between align-items-center flex-wrap">
                                <div class="d-flex align-items-center gap-2">
                                   <img src="{% static 'pages/images/coins/01.png'%}" class="img-fluid avatar avatar-30 avatar-rounded" alt="img60"> 
-                                  <span class="fs-5 me-2">Bitcoin</span>
+                                  <span class="fs-5 me-2">Earning</span>
                                   <svg width="36" height="35" viewbox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M3.86124 21.6224L11.2734 16.8577C11.6095 16.6417 12.041 16.6447 12.3718 16.8655L18.9661 21.2663C19.2968 21.4871 19.7283 21.4901 20.0644 21.2741L27.875 16.2534" stroke="#1aa053" stroke-linecap="round" stroke-linejoin="round"></path>
                                   <path d="M26.7847 13.3246L31.6677 14.0197L30.4485 18.7565L26.7847 13.3246ZM30.2822 19.4024C30.2823 19.4023 30.2823 19.4021 30.2824 19.402L30.2822 19.4024ZM31.9991 14.0669L31.9995 14.0669L32.0418 13.7699L31.9995 14.0669C31.9994 14.0669 31.9993 14.0669 31.9991 14.0669Z" fill="#1aa053" stroke="#1aa053"></path>
@@ -161,7 +161,7 @@
                                
                             </div>                    
                             <div class="pt-3">
-                               <h4 class="counter" style="visibility: visible;">$34.850,10</h4>
+                               <h4 class="counter" style="visibility: visible;">${{ profile.earnings }}</h4>
                                <div class="pt-3">
                                   <small class="text-success">+ 0.8%</small>
                                   <small class="ms-2">(BTC/USDT)</small>
@@ -179,7 +179,7 @@
                             <div class="d-flex justify-content-between align-items-center flex-wrap">
                                <div class="d-flex align-items-center gap-2">
                                   <img src="{% static 'pages/images/coins/06.png'%}" class="img-fluid avatar avatar-30 avatar-rounded" alt="img60"> 
-                                  <span class="fs-5 me-2">USDT</span>
+                                  <span class="fs-5 me-2">USDT BONUS</span>
                                   <svg width="36" height="35" viewbox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <path d="M3.86124 21.6224L11.2734 16.8577C11.6095 16.6417 12.041 16.6447 12.3718 16.8655L18.9661 21.2663C19.2968 21.4871 19.7283 21.4901 20.0644 21.2741L27.875 16.2534" stroke="#1aa053" stroke-linecap="round" stroke-linejoin="round"></path>
                                   <path d="M26.7847 13.3246L31.6677 14.0197L30.4485 18.7565L26.7847 13.3246ZM30.2822 19.4024C30.2823 19.4023 30.2823 19.4021 30.2824 19.402L30.2822 19.4024ZM31.9991 14.0669L31.9995 14.0669L32.0418 13.7699L31.9995 14.0669C31.9994 14.0669 31.9993 14.0669 31.9991 14.0669Z" fill="#1aa053" stroke="#1aa053"></path>
@@ -200,7 +200,7 @@
                                
                             </div>  
                             <div class="progress-detail pt-3">
-                               <h4 class="counter" style="visibility: visible;">$2,138.87</h4>
+                               <h4 class="counter" style="visibility: visible;">${{ profile.usdt_bonus }}</h4>
                                <div class="pt-3">
                                   <small class="text-success">+ 0.8%</small>
                                   <small class="ms-2">(LTC/USDT)</small>
@@ -234,7 +234,7 @@
                                
                             </div>
                             <div class="progress-detail pt-3">
-                               <h4 class="counter" style="visibility: visible;">$34.850,10</h4>
+                               <h4 class="counter" style="visibility: visible;" >${{ profile.main_balance }}</h4>
                                <div class="pt-3">
                                   <small class="text-success">+ 0.8%</small>
                                   <small class="ms-2">(ETH/USDT)</small>
