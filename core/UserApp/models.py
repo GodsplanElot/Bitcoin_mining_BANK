@@ -8,10 +8,11 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     earnings = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     usdt_bonus = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    main_balance = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
-@property
-def main_balance(self):
-    return (self.earnings + self.usdt_bonus) * 3  # Calculate main balance dynamically
+    
+
+
 
 def __str__(self):
     return f"{self.user.username}'s Profile"
