@@ -1,6 +1,18 @@
 from django import forms 
+from .models import Profile
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = [
+            'first_name', 'middle_name', 'last_name',
+            'address_one', 'address_two', 'country',
+            'date_of_birth', 'mother_name', 'father_name',
+        ]
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
@@ -44,3 +56,5 @@ class SignupForm(UserCreationForm):
         'class': 'form-control',
         'id': 'form-Password'
     }))
+
+    

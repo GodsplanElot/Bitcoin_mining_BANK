@@ -18,43 +18,49 @@
                                <img src="{% static 'pages/images/coins/06.png'%}" class="img-fluid avatar avatar-40 avatar-rounded" alt="img8">
                                <div class="dropdown mt-2 ms-2">
                                   <a href="#" class="text-white" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                     <span class="mt-2">WELCOME</span>
+                                     <span class="mt-2">{{ user.username }}</span>
 
                                   </a>
                                   
                                </div>                    
                                <div class="dropdown mt-2 ms-2">
                                   <a href="#" class="text-white" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                     <span class="mt-2 ">{{ user.username }}</span>
+                                     <span class="mt-2 ">xxxx</span>
 
                                   </a>
                                  
                                </div> 
                             </div>
-                            <div class="d-none d-lg-block w-50">
-                               <div class="d-flex justify-content-evenly flex-1">
-                                  <span class=" text-primary">
-                                     37,390.00<br>
-                                     <small>$37,390.00</small>
-                                  </span>
-                                  <span class=" text-primary">
-                                     129.51+0.8%<br>
-                                     <small>24th changes</small>
-                                  </span>
-                                  <span class="">
-                                     37,440.01<br>
-                                     <small>24th high</small>
-                                  </span>
-                                  <span class="">
-                                     37,327.30<br>
-                                     <small>24th low</small>
-                                  </span>
-                                  <span class="d-none">
-                                     37,390.00<br>
-                                     <small>24th volume(BTC)</small>
-                                  </span>                     
-                               </div>
-                            </div>
+
+                            
+                              {% comment  %}
+                                 <div class="d-none d-lg-block w-50">
+                                    <div class="d-flex justify-content-evenly flex-1">
+                                       <span class=" text-primary">
+                                          37,390.00<br>
+                                          <small>$37,390.00</small>
+                                       </span>
+                                       <span class=" text-primary">
+                                          129.51+0.8%<br>
+                                          <small>24th changes</small>
+                                       </span>
+                                       <span class="">
+                                          37,440.01<br>
+                                          <small>24th high</small>
+                                       </span>
+                                       <span class="">
+                                          37,327.30<br>
+                                          <small>24th low</small>
+                                       </span>
+                                       <span class="d-none">
+                                          37,390.00<br>
+                                          <small>24th volume(BTC)</small>
+                                       </span>                     
+                                    </div>
+                                 </div>
+                              {% endcomment %}
+
+
                             <div class="d-flex align-items-center justify-content-between">
                                <span class="">
                                   <svg width="32" height="32" viewbox="0 0 34 53" fill="none" xmlns="http://www.w3.org/2000/svg">
