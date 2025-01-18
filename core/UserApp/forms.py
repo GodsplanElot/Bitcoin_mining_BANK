@@ -5,14 +5,6 @@ from django.contrib.auth.models import User
 
 
 
-class ProfileForm(forms.ModelForm):
-    class Meta:
-        model = Profile
-        fields = [
-            'first_name', 'middle_name', 'last_name',
-            'address_one', 'address_two', 'country',
-            'date_of_birth', 'mother_name', 'father_name',
-        ]
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={

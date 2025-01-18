@@ -21,7 +21,7 @@ def transaction_list(request):
     return render(request, 'pages/transaction_list.html')  # Render the transaction_list template.
 @login_required(login_url="/login")
 def my_profile(request):
-    return render(request, 'pages/my_profile.html')  # Render the my_profile template.
+    return render(request, 'pages/my_profile.html', {'profile': Profile})  # Render the my_profile template.
 
 @login_required(login_url="/login")
 def customer_support(request):
