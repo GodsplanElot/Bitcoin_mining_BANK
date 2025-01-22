@@ -21,11 +21,18 @@ def transaction_list(request):
     return render(request, 'pages/transaction_list.html')  # Render the transaction_list template.
 @login_required(login_url="/login")
 def my_profile(request):
-    return render(request, 'pages/my_profile.html', {'profile': Profile})  # Render the my_profile template.
+
+    return render(request, 'pages/my_profile.html', {'profile': Profile}, )  # Render the my_profile template.
 
 @login_required(login_url="/login")
 def customer_support(request):
-    return render(request, 'pages/customer_support.html')  # Render the customer_support template.
+
+    profile = Profile.objects.get(user=request.user)
+    context = {
+        'user': request.user,  # User object
+        'profile': profile     # Profile object with balances
+    }
+    return render(request, 'pages/customer_support.html', context)  # Render the customer_support template.
 
 def about(request):
     return render(request, 'pages/about.html')  # Render the about template.
