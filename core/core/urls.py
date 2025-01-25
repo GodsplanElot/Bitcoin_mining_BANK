@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('user_profiles.urls')),
     path('', include('UserApp.urls')),  # Include the UserApp app's URLs
     path('', include('pages.urls')),  # Include the pages app's URLs
+    path('', include('admin_features.urls')),
     
     
 ]
