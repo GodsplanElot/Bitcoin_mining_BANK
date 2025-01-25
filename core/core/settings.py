@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'pages',
     'UserApp',
     'user_profiles',
+    'admin_features',
 ]
 
 MIDDLEWARE = [
