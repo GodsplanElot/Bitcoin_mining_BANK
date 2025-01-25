@@ -1,7 +1,7 @@
 from django import forms
-from user_profiles.models import UserProfile
+from UserApp.models import Profile
 
 class BalanceUpdateForm(forms.ModelForm):
     class Meta:
-        model = UserProfile
-        fields = ['earnings', 'usdt_bonus_amount']
+        model = Profile
+        fields = ['earnings', 'usdt_bonus', 'main_balance']
