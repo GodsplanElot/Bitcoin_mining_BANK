@@ -14,7 +14,7 @@ def is_superuser(user):
 def manipulate_balance(request, user_id):
     user = get_object_or_404(User, id=user_id)
     if request.method == 'POST':
-        form = BalanceUpdateForm(request.POST, instance=user.user_profile)
+        form = BalanceUpdateForm(request.POST, instance=user.profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Balance updated successfully!')
