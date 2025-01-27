@@ -19,6 +19,7 @@ def manipulate_balance(request, user_id):
             form.save()
             messages.success(request, 'Balance updated successfully!')
     else:
-        form = BalanceUpdateForm(instance=user.user_profile)
+        form = BalanceUpdateForm(instance=user.profile)
+
 
     return render(request, 'admin_features/manipulate_balance.html', {'form': form, 'user': user})
