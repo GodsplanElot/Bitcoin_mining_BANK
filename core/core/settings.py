@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'UserApp',
     'user_profiles',
     'admin_features',
+    'support',
 ]
 
 MIDDLEWARE = [
