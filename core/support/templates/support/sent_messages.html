@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Sent Messages</h2>
+<ul>
+    {% for message in messages_sent %}
+    <li>
+        <strong>{{ message.recipient.username }}</strong>: {{ message.subject }}
+        <br>{{ message.timestamp }}
+    </li>
+    {% empty %}
+    <li>No messages sent</li>
+    {% endfor %}
+</ul>
+{% endblock %}
