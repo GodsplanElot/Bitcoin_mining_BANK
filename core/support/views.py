@@ -17,14 +17,20 @@ def sent_messages(request):
 
 @login_required
 def send_message(request):
-    if request.method == 'POST':
-        form = MessageForm(request.POST)
-        if form.is_valid():
-            message = form.save(commit=False)
-            message.sender = request.user
-            message.save()
-            messages.success(request, 'Message sent successfully!')
-            return redirect('support:inbox')
+    form = MessageForm(request.POST or None)
+    
+    # If the user is NOT an admin, only allow messaging admins
+    if not request.user.is_superuser:
+        form.fields['recipient'].queryset = User.objects.filter(is_superuser=True)
     else:
-        form = MessageForm()
+        # If the user is an admin, allow messaging any user
+        form.fields['recipient'].queryset = User.objects.all()
+
+    if request.method == 'POST' and form.is_valid():
+        message = form.save(commit=False)
+        message.sender = request.user
+        message.save()
+        messages.success(request, 'Message sent successfully!')
+        return redirect('support:inbox')
+
     return render(request, 'support/send_message.html', {'form': form})
