@@ -5,17 +5,17 @@ from .forms import MessageForm
 from .models import Message
 
 # Create your views here.
-
+@login_required
 def inbox(request):
     messages_received = Message.objects.filter(recipient=request.user).order_by('-timestamp')
     return render(request, 'support/inbox.html', {'messages_received': messages_received})
 
-
+@login_required
 def sent_messages(request):
     messages_sent = Message.objects.filter(sender=request.user).order_by('-timestamp')
     return render(request, 'support/sent_messages.html', {'messages_sent': messages_sent})
 
-
+@login_required
 def send_message(request):
     if request.method == 'POST':
         form = MessageForm(request.POST)
