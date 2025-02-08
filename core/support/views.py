@@ -17,13 +17,11 @@ def sent_messages(request):
 
 @login_required
 def send_message(request):
-    form = MessageForm(request.POST or None)
+    form = MessageForm(request.POST or None, user=request.user)
     
-    # If the user is NOT an admin, only allow messaging admins
     if not request.user.is_superuser:
         form.fields['recipient'].queryset = User.objects.filter(is_superuser=True)
     else:
-        # If the user is an admin, allow messaging any user
         form.fields['recipient'].queryset = User.objects.all()
 
     if request.method == 'POST' and form.is_valid():
