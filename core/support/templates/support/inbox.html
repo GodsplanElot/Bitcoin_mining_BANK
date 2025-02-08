@@ -3,9 +3,16 @@
 <h2>Inbox</h2>
 <ul>
     {% for message in messages_received %}
-    <li>
-        <strong>{{ message.sender.username }}</strong>: {{ message.subject }}
-        <br>{{ message.timestamp }}
+    <li  class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{ message.subject }}</h5>
+            <a href="#" class="card-link">{{ message.sender.username }}</a>
+<!--             <strong></strong>: 
+            <br> -->
+            <p class="card-text">{{body}}</p>
+            
+            <a href="#" class="card-link">{{ message.timestamp }}</a>
+        </div>
     </li>
     {% empty %}
     <li>No messages</li>
