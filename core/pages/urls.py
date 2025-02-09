@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views, custom_404_view 
+from . import views
 from django.conf.urls import handler404
 
 
