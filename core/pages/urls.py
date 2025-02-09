@@ -15,3 +15,6 @@ urlpatterns = [
     path('privacy_policy/', views.privacy_policy, name='privacy_policy'),  # privacy_policy
     
 ]
+
+
+handler404 = custom_404_view  # Assign the custom 404 view
