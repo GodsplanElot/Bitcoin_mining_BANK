@@ -16,7 +16,11 @@ def sent_messages(request):
     messages_sent = Message.objects.filter(sender=request.user).order_by('-timestamp')
     return render(request, 'support/sent_messages.html', {'messages_sent': messages_sent})
 
+def superuser_required(user):
+    return user.is_superuser  # Only allows superusers
+
 @login_required
+@user_passes_test(superuser_required)  # Apply restriction
 def send_message(request):
     form = MessageForm(request.POST or None, user=request.user)
     
