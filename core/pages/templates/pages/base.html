@@ -241,6 +241,13 @@
 
 
 
+            {% if request.user.is_superuser %}
+                <a href="{% url 'support:send_message' %}" class="btn btn-success">✉️ Send Message</a>
+            {% endif %}
+
+
+
+
 
 
 
