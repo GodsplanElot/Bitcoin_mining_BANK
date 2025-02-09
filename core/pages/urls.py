@@ -1,5 +1,7 @@
 from django.urls import path
-from . import views
+from . import views, custom_404_view 
+from django.conf.urls import handler404
+
 
 app_name = 'pages'
 
