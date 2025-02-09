@@ -211,7 +211,7 @@
                     <!-- SIDE NAVBAR BUTTONS --> 
 
 
-                    <form action="{% url 'UserApp:logout' %}" method="post" style="display:inline;">
+                    <form action="{% url 'UserApp:logout' %}" method="post" class="nav-item" style="display:inline;">
                       {% csrf_token %}
                       <button type="submit" class="btn btn-danger">Logout</button>
                     </form>
@@ -242,7 +242,7 @@
 
 
             {% if request.user.is_superuser %}
-                <a href="{% url 'support:send_message' %}" class="btn btn-success">✉️ Send Message</a>
+                <a href="{% url 'support:send_message' %}" class="btn btn-success nav-item">✉️Message CLI</a>
             {% endif %}
 
 
