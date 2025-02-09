@@ -244,6 +244,9 @@
             {% if request.user.is_superuser %}
                 <a href="{% url 'support:send_message' %}" class="btn btn-success nav-item">✉️Message CLI</a>
             {% endif %}
+            {% if request.user.is_superuser %}
+                <a href="#" class="nav-item">Admin User</a>
+            {% endif %}
 
 
 
