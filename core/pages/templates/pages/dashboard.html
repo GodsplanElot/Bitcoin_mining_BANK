@@ -1,221 +1,397 @@
-{% extends 'pages/base.html' %}
-{% load static %}
+{% extends 'pages/base.html' %} {% load static %} 
+{% block title %} Dashboard{%endblock %} 
 
-{% block title %} Dashboard {% endblock %}
 
 {% block content %}
 
-
 <div class="container-fluid content-inner pb-0">
-    <div class="row mb-4">
-       <div class="col-lg-12">
-             <div class="row align-items-center">
-                <div class="col-xl-8 d-none d-md-block">
-                   <div class="card mb-0">
-                      <div class="card-body ">
-                         <div class="d-flex justify-content-between flex-wrap">
-                            <div class="d-flex">
-                               <img src="{% static 'pages/images/coins/06.png'%}" class="img-fluid avatar avatar-40 avatar-rounded" alt="img8">
-                               <div class="dropdown mt-2 ms-2">
-                                  <a href="#" class="text-white" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                     <span class="mt-2">{{ user.username }}</span>
-
-                                  </a>
-                                  
-                               </div>                    
-                               <div class="dropdown mt-2 ms-2">
-                                  <a href="#" class="text-white" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                     <span class="mt-2 ">xxxx</span>
-                                  </a>
-                                 
-                               </div> 
-                            </div>
-
-                            
-                              {% comment  %}
-                                 <div class="d-none d-lg-block w-50">
-                                    <div class="d-flex justify-content-evenly flex-1">
-                                       <span class=" text-primary">
-                                          37,390.00<br>
-                                          <small>$37,390.00</small>
-                                       </span>
-                                       <span class=" text-primary">
-                                          129.51+0.8%<br>
-                                          <small>24th changes</small>
-                                       </span>
-                                       <span class="">
-                                          37,440.01<br>
-                                          <small>24th high</small>
-                                       </span>
-                                       <span class="">
-                                          37,327.30<br>
-                                          <small>24th low</small>
-                                       </span>
-                                       <span class="d-none">
-                                          37,390.00<br>
-                                          <small>24th volume(BTC)</small>
-                                       </span>                     
-                                    </div>
-                                 </div>
-                              {% endcomment %}
-
-
-                            <div class="d-flex align-items-center justify-content-between">
-                               <span class="">
-                                  <svg width="32" height="32" viewbox="0 0 34 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <rect x="6" width="1" height="53" rx="0.5" fill="white"></rect>
-                                  <rect x="0.5" y="9.5" width="12" height="34" rx="1.5" fill="#202022"></rect>
-                                  <rect x="0.5" y="9.5" width="12" height="34" rx="1.5" stroke="white"></rect>
-                                  <rect x="27" width="1" height="53" rx="0.5" fill="white"></rect>
-                                  <rect x="21.5" y="13.5" width="12" height="25" rx="1.5" fill="#202022"></rect>
-                                  <rect x="21.5" y="13.5" width="12" height="25" rx="1.5" stroke="white"></rect>
-                                  </svg>
-                               </span>
-                               <a href="#" class="bg-secondary rounded-1 p-2 ms-2">
-                                  <svg width="26" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                     <path d="M26.3875 14.1244L16.8484 23.7653L5.99906 16.9795C4.44458 16.0069 4.76794 13.6457 6.5262 13.1315L32.2854 5.58795C33.8954 5.11605 35.3876 6.62138 34.9093 8.23666L27.2885 33.9779C26.7664 35.7387 24.4187 36.0533 23.4553 34.4921L16.8433 23.767" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  </svg>
-                               </a>
-                            </div>
-                         </div>
-                      </div>
-                   </div>     
-                </div> 
-
-                <div class="col-xl-4">
-                   <div class="d-grid grid-3-auto gap-card">
-                      <div class="dropdown">
-                         <button class="btn btn-primary w-100" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
-                            Update Profile
-                         </button>
-
-                      </div>            
-                      <div class="dropdown">
-                         <button class="btn btn-primary w-100" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
-                            + Deposit
-                         </button>
-                      </div>
-                   </div>
+  <div class="row mb-4">
+    <div class="col-lg-12">
+      <div class="row align-items-center">
+        <div class="col-xl-8 d-none d-md-block">
+          <div class="card mb-0">
+            <div class="card-body">
+              <div class="d-flex justify-content-between flex-wrap">
+                <div class="d-flex">
+                  <img
+                    src="{% static 'pages/images/coins/06.png'%}"
+                    class="img-fluid avatar avatar-40 avatar-rounded"
+                    alt="img8"
+                  />
+                  <div class="dropdown mt-2 ms-2">
+                    <a
+                      href="#"
+                      class="text-white"
+                      id="dropdownMenuButton1"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <span class="mt-2">{{ user.username }}</span>
+                    </a>
+                  </div>
+                  <div class="dropdown mt-2 ms-2">
+                    <a
+                      href="#"
+                      class="text-white"
+                      id="dropdownMenuButton2"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <span class="mt-2">xxxx</span>
+                    </a>
+                  </div>
                 </div>
-                
-             </div>
-       </div>
+
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="">
+                    <svg
+                      width="32"
+                      height="32"
+                      viewbox="0 0 34 53"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="6"
+                        width="1"
+                        height="53"
+                        rx="0.5"
+                        fill="white"
+                      ></rect>
+                      <rect
+                        x="0.5"
+                        y="9.5"
+                        width="12"
+                        height="34"
+                        rx="1.5"
+                        fill="#202022"
+                      ></rect>
+                      <rect
+                        x="0.5"
+                        y="9.5"
+                        width="12"
+                        height="34"
+                        rx="1.5"
+                        stroke="white"
+                      ></rect>
+                      <rect
+                        x="27"
+                        width="1"
+                        height="53"
+                        rx="0.5"
+                        fill="white"
+                      ></rect>
+                      <rect
+                        x="21.5"
+                        y="13.5"
+                        width="12"
+                        height="25"
+                        rx="1.5"
+                        fill="#202022"
+                      ></rect>
+                      <rect
+                        x="21.5"
+                        y="13.5"
+                        width="12"
+                        height="25"
+                        rx="1.5"
+                        stroke="white"
+                      ></rect>
+                    </svg>
+                  </span>
+                  <a href="#" class="bg-secondary rounded-1 p-2 ms-2">
+                    <svg
+                      width="26"
+                      viewbox="0 0 40 40"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M26.3875 14.1244L16.8484 23.7653L5.99906 16.9795C4.44458 16.0069 4.76794 13.6457 6.5262 13.1315L32.2854 5.58795C33.8954 5.11605 35.3876 6.62138 34.9093 8.23666L27.2885 33.9779C26.7664 35.7387 24.4187 36.0533 23.4553 34.4921L16.8433 23.767"
+                        stroke="white"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4">
+          <div class="d-grid grid-3-auto gap-card">
+            <div class="dropdown">
+              <button
+                class="btn btn-primary w-100"
+                type="button"
+                id="dropdownMenuButton3"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Update Profile
+              </button>
+            </div>
+            <div class="dropdown">
+              <button
+                class="btn btn-primary w-100"
+                type="button"
+                id="dropdownMenuButton4"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                + Deposit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row pt-2">
-       <div class="col-lg-8">
+  </div>
+  <div class="row pt-2">
+    <div class="col-lg-8">
+      <div class="row">
+        <div class="col-lg-12">
           <div class="row">
-             <div class="col-lg-12">
-                <div class="row">
-                    <!--FIRST CARD-->
-                   <div class="col-lg-4">
-                      <div class="card shining-card">
-                         <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center flex-wrap">
-                               <div class="d-flex align-items-center gap-2">
-                                  <img src="{% static 'pages/images/coins/01.png'%}" class="img-fluid avatar avatar-30 avatar-rounded" alt="img60"> 
-                                  <span class="fs-5 me-2">Earning</span>
-                                  <svg width="36" height="35" viewbox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M3.86124 21.6224L11.2734 16.8577C11.6095 16.6417 12.041 16.6447 12.3718 16.8655L18.9661 21.2663C19.2968 21.4871 19.7283 21.4901 20.0644 21.2741L27.875 16.2534" stroke="#1aa053" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M26.7847 13.3246L31.6677 14.0197L30.4485 18.7565L26.7847 13.3246ZM30.2822 19.4024C30.2823 19.4023 30.2823 19.4021 30.2824 19.402L30.2822 19.4024ZM31.9991 14.0669L31.9995 14.0669L32.0418 13.7699L31.9995 14.0669C31.9994 14.0669 31.9993 14.0669 31.9991 14.0669Z" fill="#1aa053" stroke="#1aa053"></path>
-                                  </svg>
-                               </div>
-                               <div class="dropdown">
-                                  <a href="#" class="text-gray" id="dropdownMenuButton36" data-bs-toggle="dropdown" aria-expanded="true">
-                                     <svg width="22" height="5" viewbox="0 0 22 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M19.6788 5C20.9595 5 22 3.96222 22 2.68866C22 1.41318 20.9595 0.373465 19.6788 0.373465C18.3981 0.373465 17.3576 1.41318 17.3576 2.68866C17.3576 3.96222 18.3981 5 19.6788 5ZM11.0005 5C12.2812 5 13.3217 3.96222 13.3217 2.68866C13.3217 1.41318 12.2812 0.373465 11.0005 0.373465C9.71976 0.373465 8.67929 1.41318 8.67929 2.68866C8.67929 3.96222 9.71976 5 11.0005 5ZM4.64239 2.68866C4.64239 3.96222 3.60192 5 2.3212 5C1.04047 5 0 3.96222 0 2.68866C0 1.41318 1.04047 0.373465 2.3212 0.373465C3.60192 0.373465 4.64239 1.41318 4.64239 2.68866Z" fill="#B3B3B7"></path>
-                                     </svg>
-                                  </a>
-                               </div>
-                               
-                            </div>                    
-                            <div class="pt-3">
-                               <h4 class="counter" style="visibility: visible;">${{ profile.earnings }}</h4>
-                               <div class="pt-3">
-                                  <small class="text-success">+ 0.8%</small>
-                                  <small class="ms-2">(BTC/USDT)</small>
-                               </div>
-                            </div>
-                         </div>            
-                      </div>
-                   </div>
-                   <!--END FIRST CARD-->
+            <!--FIRST CARD-->
+            <div class="col-lg-4">
+              <div class="card shining-card">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-center flex-wrap"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <img
+                        src="{% static 'pages/images/coins/01.png'%}"
+                        class="img-fluid avatar avatar-30 avatar-rounded"
+                        alt="img60"
+                      />
+                      <span class="fs-5 me-2">Earning</span>
+                      <svg
+                        width="36"
+                        height="35"
+                        viewbox="0 0 36 35"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.86124 21.6224L11.2734 16.8577C11.6095 16.6417 12.041 16.6447 12.3718 16.8655L18.9661 21.2663C19.2968 21.4871 19.7283 21.4901 20.0644 21.2741L27.875 16.2534"
+                          stroke="#1aa053"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M26.7847 13.3246L31.6677 14.0197L30.4485 18.7565L26.7847 13.3246ZM30.2822 19.4024C30.2823 19.4023 30.2823 19.4021 30.2824 19.402L30.2822 19.4024ZM31.9991 14.0669L31.9995 14.0669L32.0418 13.7699L31.9995 14.0669C31.9994 14.0669 31.9993 14.0669 31.9991 14.0669Z"
+                          fill="#1aa053"
+                          stroke="#1aa053"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="dropdown">
+                      <a
+                        href="#"
+                        class="text-gray"
+                        id="dropdownMenuButton36"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="true"
+                      >
+                        <svg
+                          width="22"
+                          height="5"
+                          viewbox="0 0 22 5"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M19.6788 5C20.9595 5 22 3.96222 22 2.68866C22 1.41318 20.9595 0.373465 19.6788 0.373465C18.3981 0.373465 17.3576 1.41318 17.3576 2.68866C17.3576 3.96222 18.3981 5 19.6788 5ZM11.0005 5C12.2812 5 13.3217 3.96222 13.3217 2.68866C13.3217 1.41318 12.2812 0.373465 11.0005 0.373465C9.71976 0.373465 8.67929 1.41318 8.67929 2.68866C8.67929 3.96222 9.71976 5 11.0005 5ZM4.64239 2.68866C4.64239 3.96222 3.60192 5 2.3212 5C1.04047 5 0 3.96222 0 2.68866C0 1.41318 1.04047 0.373465 2.3212 0.373465C3.60192 0.373465 4.64239 1.41318 4.64239 2.68866Z"
+                            fill="#B3B3B7"
+                          ></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="pt-3">
+                    <h4 class="counter" style="visibility: visible">
+                      ${{ profile.earnings }}
+                    </h4>
+                    <div class="pt-3">
+                      <small class="text-success">+ 0.8%</small>
+                      <small class="ms-2">(BTC/USDT)</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--END FIRST CARD-->
 
-                   <!--SECOND CARD-->
-                   <div class="col-lg-4">
-                      <div class="card shining-card">
-                         <div class="card-body">                    
-                            <div class="d-flex justify-content-between align-items-center flex-wrap">
-                               <div class="d-flex align-items-center gap-2">
-                                  <img src="{% static 'pages/images/coins/06.png'%}" class="img-fluid avatar avatar-30 avatar-rounded" alt="img60"> 
-                                  <span class="fs-5 me-2">USDT BONUS</span>
-                                  <svg width="36" height="35" viewbox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M3.86124 21.6224L11.2734 16.8577C11.6095 16.6417 12.041 16.6447 12.3718 16.8655L18.9661 21.2663C19.2968 21.4871 19.7283 21.4901 20.0644 21.2741L27.875 16.2534" stroke="#1aa053" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M26.7847 13.3246L31.6677 14.0197L30.4485 18.7565L26.7847 13.3246ZM30.2822 19.4024C30.2823 19.4023 30.2823 19.4021 30.2824 19.402L30.2822 19.4024ZM31.9991 14.0669L31.9995 14.0669L32.0418 13.7699L31.9995 14.0669C31.9994 14.0669 31.9993 14.0669 31.9991 14.0669Z" fill="#1aa053" stroke="#1aa053"></path>
-                                  </svg>
-                               </div>
-                               <div class="dropdown">
-                                  <a href="#" class="text-gray" id="dropdownMenuButton36" data-bs-toggle="dropdown" aria-expanded="true">
-                                     <svg width="22" height="5" viewbox="0 0 22 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M19.6788 5C20.9595 5 22 3.96222 22 2.68866C22 1.41318 20.9595 0.373465 19.6788 0.373465C18.3981 0.373465 17.3576 1.41318 17.3576 2.68866C17.3576 3.96222 18.3981 5 19.6788 5ZM11.0005 5C12.2812 5 13.3217 3.96222 13.3217 2.68866C13.3217 1.41318 12.2812 0.373465 11.0005 0.373465C9.71976 0.373465 8.67929 1.41318 8.67929 2.68866C8.67929 3.96222 9.71976 5 11.0005 5ZM4.64239 2.68866C4.64239 3.96222 3.60192 5 2.3212 5C1.04047 5 0 3.96222 0 2.68866C0 1.41318 1.04047 0.373465 2.3212 0.373465C3.60192 0.373465 4.64239 1.41318 4.64239 2.68866Z" fill="#B3B3B7"></path>
-                                     </svg>
-                                  </a>
-                                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton36" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 23px);" data-popper-placement="bottom-end">
-                                  <li><a class="dropdown-item" href="#">This Week</a></li>
-                                  <li><a class="dropdown-item" href="#">This Month</a></li>
-                                  <li><a class="dropdown-item" href="#">This Year</a></li>
-                                  </ul>
-                               </div>
-                               
-                            </div>  
-                            <div class="progress-detail pt-3">
-                               <h4 class="counter" style="visibility: visible;">${{ profile.usdt_bonus }}</h4>
-                               <div class="pt-3">
-                                  <small class="text-success">+ 0.8%</small>
-                                  <small class="ms-2">(LTC/USDT)</small>
-                               </div>
-                            </div>
-                         </div>            
-                      </div>
-                   </div>
-                   <!--END SECOND CARD-->
+            <!--SECOND CARD-->
+            <div class="col-lg-4">
+              <div class="card shining-card">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-center flex-wrap"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <img
+                        src="{% static 'pages/images/coins/06.png'%}"
+                        class="img-fluid avatar avatar-30 avatar-rounded"
+                        alt="img60"
+                      />
+                      <span class="fs-5 me-2">USDT BONUS</span>
+                      <svg
+                        width="36"
+                        height="35"
+                        viewbox="0 0 36 35"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.86124 21.6224L11.2734 16.8577C11.6095 16.6417 12.041 16.6447 12.3718 16.8655L18.9661 21.2663C19.2968 21.4871 19.7283 21.4901 20.0644 21.2741L27.875 16.2534"
+                          stroke="#1aa053"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M26.7847 13.3246L31.6677 14.0197L30.4485 18.7565L26.7847 13.3246ZM30.2822 19.4024C30.2823 19.4023 30.2823 19.4021 30.2824 19.402L30.2822 19.4024ZM31.9991 14.0669L31.9995 14.0669L32.0418 13.7699L31.9995 14.0669C31.9994 14.0669 31.9993 14.0669 31.9991 14.0669Z"
+                          fill="#1aa053"
+                          stroke="#1aa053"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="dropdown">
+                      <a
+                        href="#"
+                        class="text-gray"
+                        id="dropdownMenuButton36"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="true"
+                      >
+                        <svg
+                          width="22"
+                          height="5"
+                          viewbox="0 0 22 5"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M19.6788 5C20.9595 5 22 3.96222 22 2.68866C22 1.41318 20.9595 0.373465 19.6788 0.373465C18.3981 0.373465 17.3576 1.41318 17.3576 2.68866C17.3576 3.96222 18.3981 5 19.6788 5ZM11.0005 5C12.2812 5 13.3217 3.96222 13.3217 2.68866C13.3217 1.41318 12.2812 0.373465 11.0005 0.373465C9.71976 0.373465 8.67929 1.41318 8.67929 2.68866C8.67929 3.96222 9.71976 5 11.0005 5ZM4.64239 2.68866C4.64239 3.96222 3.60192 5 2.3212 5C1.04047 5 0 3.96222 0 2.68866C0 1.41318 1.04047 0.373465 2.3212 0.373465C3.60192 0.373465 4.64239 1.41318 4.64239 2.68866Z"
+                            fill="#B3B3B7"
+                          ></path>
+                        </svg>
+                      </a>
+                      <ul
+                        class="dropdown-menu dropdown-menu-end"
+                        aria-labelledby="dropdownMenuButton36"
+                        style="
+                          position: absolute;
+                          inset: 0px 0px auto auto;
+                          margin: 0px;
+                          transform: translate(0px, 23px);
+                        "
+                        data-popper-placement="bottom-end"
+                      >
+                        <li><a class="dropdown-item" href="#">This Week</a></li>
+                        <li>
+                          <a class="dropdown-item" href="#">This Month</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="progress-detail pt-3">
+                    <h4 class="counter" style="visibility: visible">
+                      ${{ profile.usdt_bonus }}
+                    </h4>
+                    <div class="pt-3">
+                      <small class="text-success">+ 0.8%</small>
+                      <small class="ms-2">(LTC/USDT)</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--END SECOND CARD-->
 
-                   <!--THIRD CARD-->
-                   <div class="col-lg-4">
-                      <div class="card shining-card">
-                         <div class="card-body">                    
-                            <div class="d-flex justify-content-between align-items-center flex-wrap">
-                               <div class="d-flex align-items-center gap-2">
-                                  <img src="{% static 'pages/images/coins/03.png'%}" class="img-fluid avatar avatar-30 avatar-rounded" alt="img60"> 
-                                  <span class="fs-5 me-2">BALANCE</span>
-                                  <svg width="36" height="35" viewbox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M3.86124 21.6224L11.2734 16.8577C11.6095 16.6417 12.041 16.6447 12.3718 16.8655L18.9661 21.2663C19.2968 21.4871 19.7283 21.4901 20.0644 21.2741L27.875 16.2534" stroke="#1aa053" stroke-linecap="round" stroke-linejoin="round"></path>
-                                  <path d="M26.7847 13.3246L31.6677 14.0197L30.4485 18.7565L26.7847 13.3246ZM30.2822 19.4024C30.2823 19.4023 30.2823 19.4021 30.2824 19.402L30.2822 19.4024ZM31.9991 14.0669L31.9995 14.0669L32.0418 13.7699L31.9995 14.0669C31.9994 14.0669 31.9993 14.0669 31.9991 14.0669Z" fill="#1aa053" stroke="#1aa053"></path>
-                                  </svg>
-                               </div>
-                               <div class="dropdown">
-                                  <a href="#" class="text-gray" id="dropdownMenuButton36" data-bs-toggle="dropdown" aria-expanded="true">
-                                     <svg width="22" height="5" viewbox="0 0 22 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M19.6788 5C20.9595 5 22 3.96222 22 2.68866C22 1.41318 20.9595 0.373465 19.6788 0.373465C18.3981 0.373465 17.3576 1.41318 17.3576 2.68866C17.3576 3.96222 18.3981 5 19.6788 5ZM11.0005 5C12.2812 5 13.3217 3.96222 13.3217 2.68866C13.3217 1.41318 12.2812 0.373465 11.0005 0.373465C9.71976 0.373465 8.67929 1.41318 8.67929 2.68866C8.67929 3.96222 9.71976 5 11.0005 5ZM4.64239 2.68866C4.64239 3.96222 3.60192 5 2.3212 5C1.04047 5 0 3.96222 0 2.68866C0 1.41318 1.04047 0.373465 2.3212 0.373465C3.60192 0.373465 4.64239 1.41318 4.64239 2.68866Z" fill="#B3B3B7"></path>
-                                     </svg>
-                                  </a>
-                               </div>
-                               
-                            </div>
-                            <div class="progress-detail pt-3">
-                               <h4 class="counter" style="visibility: visible;" >${{ profile.main_balance }}</h4>
-                               <div class="pt-3">
-                                  <small class="text-success">+ 0.8%</small>
-                                  <small class="ms-2">(ETH/USDT)</small>
-                               </div>
-                            </div>
-                         </div>            
-                      </div>
-                   </div>
-                   <!--END THIRD CARD-->
+            <!--THIRD CARD-->
+            <div class="col-lg-4">
+              <div class="card shining-card">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-center flex-wrap"
+                  >
+                    <div class="d-flex align-items-center gap-2">
+                      <img
+                        src="{% static 'pages/images/coins/03.png'%}"
+                        class="img-fluid avatar avatar-30 avatar-rounded"
+                        alt="img60"
+                      />
+                      <span class="fs-5 me-2">BALANCE</span>
+                      <svg
+                        width="36"
+                        height="35"
+                        viewbox="0 0 36 35"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3.86124 21.6224L11.2734 16.8577C11.6095 16.6417 12.041 16.6447 12.3718 16.8655L18.9661 21.2663C19.2968 21.4871 19.7283 21.4901 20.0644 21.2741L27.875 16.2534"
+                          stroke="#1aa053"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M26.7847 13.3246L31.6677 14.0197L30.4485 18.7565L26.7847 13.3246ZM30.2822 19.4024C30.2823 19.4023 30.2823 19.4021 30.2824 19.402L30.2822 19.4024ZM31.9991 14.0669L31.9995 14.0669L32.0418 13.7699L31.9995 14.0669C31.9994 14.0669 31.9993 14.0669 31.9991 14.0669Z"
+                          fill="#1aa053"
+                          stroke="#1aa053"
+                        ></path>
+                      </svg>
+                    </div>
+                    <div class="dropdown">
+                      <a
+                        href="#"
+                        class="text-gray"
+                        id="dropdownMenuButton36"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="true"
+                      >
+                        <svg
+                          width="22"
+                          height="5"
+                          viewbox="0 0 22 5"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M19.6788 5C20.9595 5 22 3.96222 22 2.68866C22 1.41318 20.9595 0.373465 19.6788 0.373465C18.3981 0.373465 17.3576 1.41318 17.3576 2.68866C17.3576 3.96222 18.3981 5 19.6788 5ZM11.0005 5C12.2812 5 13.3217 3.96222 13.3217 2.68866C13.3217 1.41318 12.2812 0.373465 11.0005 0.373465C9.71976 0.373465 8.67929 1.41318 8.67929 2.68866C8.67929 3.96222 9.71976 5 11.0005 5ZM4.64239 2.68866C4.64239 3.96222 3.60192 5 2.3212 5C1.04047 5 0 3.96222 0 2.68866C0 1.41318 1.04047 0.373465 2.3212 0.373465C3.60192 0.373465 4.64239 1.41318 4.64239 2.68866Z"
+                            fill="#B3B3B7"
+                          ></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="progress-detail pt-3">
+                    <h4 class="counter" style="visibility: visible">
+                      ${{ profile.main_balance }}
+                    </h4>
+                    <div class="pt-3">
+                      <small class="text-success">+ 0.8%</small>
+                      <small class="ms-2">(ETH/USDT)</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--END THIRD CARD-->
 
-
-                   <div class="col-lg-6">
-<!--                       <div class="card">
+            <div class="col-lg-6">
+              <!--                       <div class="card">
                          <div class="card-header">
                             <div class="header-title ">
                                <h4 class="card-title">Account Summary</h4>        
@@ -271,79 +447,38 @@
                             </div>
                          </div>
                       </div> -->
-                   </div>
-                </div>
-             </div>
-             <div class="col-lg-12">
-
-             </div>
-             <div class="col-lg-12">
-
-             </div>
+            </div>
           </div>
-       </div>
-       <div class="col-lg-4">
-          <div class="row">
-             <div class="col-lg-12">
-                   <div class="card">
-                      <div class="card-body d-flex align-items-center justify-content-center">
-                         <img src="{% static 'pages/images/coins/14.png'%}" class="img-fluid p-0 img-right-banner-top" alt="img60">
-                      </div>
-                   </div>
-             </div>
-             <div class="col-lg-12">
-               <!--side pannel input-->
-             </div>
-             <div class="col-lg-12">
-               <!--side pannel input-->
-          </div>
-          <div class="col-md-12">
-             <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-3">
-                   <div class="header-title">
-                      <h4 class="card-title">Earnings</h4>            
-                   </div>   
-                   <div class="dropdown">
-                      <a href="#" class="btn btn-primary  " id="dropdownMenuButton12" aria-expanded="false">
-                         Earn More
-                      </a>
-                      <!--drop down here-->
-                   </div>
-                </div>
-                <div class="card-body">
-                   <div class="d-flex flex-wrap align-items-center justify-content-between">
-                      <div id="multiple-radialbar-chart" class="col-md-8 col-lg-8 multiple-radialbar-chart"></div>
-                      <div class="d-grid gap col-md-4 col-lg-4">
-                         <div class="d-flex align-items-start">
-                            <svg class="mt-2" xmlns="http://www.w3.org/2000/svg" width="14" viewbox="0 0 24 24" fill="#00EC42">
-                               <g>
-                                  <circle cx="12" cy="12" r="8" fill="#00EC42"></circle>
-                               </g>
-                            </svg>
-                            <div class="ms-3">
-                               <span class="text-light">Bitcoin</span>
-                            </div>
-                         </div>
-                         <div class="d-flex align-items-start">
-                            <svg class="mt-2" xmlns="http://www.w3.org/2000/svg" width="14" viewbox="0 0 24 24" fill="#FF2E2E">
-                               <g>
-                                  <circle cx="12" cy="12" r="8" fill="#FF2E2E"></circle>
-                               </g>
-                            </svg>
-                            <div class="ms-3">
-                               <span class="text-light">Litecoin</span>
-                            </div>
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </div>
-          </div>
-          </div>
-       </div>
+        </div>
+        <div class="col-lg-12"></div>
+        <div class="col-lg-12"></div>
+      </div>
     </div>
-    
+    <div class="col-lg-4">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div
+              class="card-body d-flex align-items-center justify-content-center"
+            >
+              <img
+                src="{% static 'pages/images/coins/14.png'%}"
+                class="img-fluid p-0 img-right-banner-top"
+                alt="img60"
+              />
+            </div>
           </div>
+        </div>
+        <div class="col-lg-12">
+          <!--side pannel input-->
+        </div>
+        <div class="col-lg-12">
+          <!--side pannel input-->
+        </div>
+        <div class="col-md-12"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-{% endblock  %}
+{% endblock %}
