@@ -13,7 +13,7 @@
       <link rel="stylesheet" href="{% static 'pages/css/custom.min.css' %}">
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-      <link href="../../../css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> </head>
+<!--       <link href="../../../css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> --> </head>
   <body class=" "> 
     <!-- loader Start -->
     <div id="loading">
@@ -153,57 +153,36 @@
 
               {% endif %}
 
-              {% if request.user.is_authenticated %}  
-
-
-
-
-{% comment %}                     <form class="d-inline-block mt-3" action="{% 'UserApp:logout' %}" method="post">
-                    {%  csrf_token  %}
-                    <button> logout </button>
-                  </form> {% endcomment %}
-
-
-
-
-
-                                      <!-- SIDE NAVBAR BUTTONS --> 
-                  <li class="nav-item ">
-                    <a class="nav-link " aria-current="page" href="{% url 'pages:about' %}">
-                        <i class="icon">
-                            <svg width="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path opacity="0.4" d="M2 11.0786C2.05 13.4166 2.19 17.4156 2.21 17.8566C2.281 18.7996 2.642 19.7526 3.204 20.4246C3.986 21.3676 4.949 21.7886 6.292 21.7886C8.148 21.7986 10.194 21.7986 12.181 21.7986C14.176 21.7986 16.112 21.7986 17.747 21.7886C19.071 21.7886 20.064 21.3566 20.836 20.4246C21.398 19.7526 21.759 18.7896 21.81 17.8566C21.83 17.4856 21.93 13.1446 21.99 11.0786H2Z" fill="currentColor"></path>                                <path d="M11.2451 15.3843V16.6783C11.2451 17.0923 11.5811 17.4283 11.9951 17.4283C12.4091 17.4283 12.7451 17.0923 12.7451 16.6783V15.3843C12.7451 14.9703 12.4091 14.6343 11.9951 14.6343C11.5811 14.6343 11.2451 14.9703 11.2451 15.3843Z" fill="currentColor"></path>                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.211 14.5565C10.111 14.9195 9.762 15.1515 9.384 15.1015C6.833 14.7455 4.395 13.8405 2.337 12.4815C2.126 12.3435 2 12.1075 2 11.8555V8.38949C2 6.28949 3.712 4.58149 5.817 4.58149H7.784C7.972 3.12949 9.202 2.00049 10.704 2.00049H13.286C14.787 2.00049 16.018 3.12949 16.206 4.58149H18.183C20.282 4.58149 21.99 6.28949 21.99 8.38949V11.8555C21.99 12.1075 21.863 12.3425 21.654 12.4815C19.592 13.8465 17.144 14.7555 14.576 15.1105C14.541 15.1155 14.507 15.1175 14.473 15.1175C14.134 15.1175 13.831 14.8885 13.746 14.5525C13.544 13.7565 12.821 13.1995 11.99 13.1995C11.148 13.1995 10.433 13.7445 10.211 14.5565ZM13.286 3.50049H10.704C10.031 3.50049 9.469 3.96049 9.301 4.58149H14.688C14.52 3.96049 13.958 3.50049 13.286 3.50049Z" fill="currentColor"></path>
-                            </svg>
-                        </i>
-                        <span class="item-name">About Us</span>
-                    </a>
-                </li>
-                <!-- SIDE NAVBAR BUTTONS --> 
-
-
-
-
-                <!-- SIDE NAVBAR BUTTONS --> 
-                <li class="nav-item ">
-                    <a class="nav-link " aria-current="page" href="{% url 'pages:privacy_policy'%}">
-                        <i class="icon">
-                            <svg width="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path opacity="0.4" d="M16.34 1.99976H7.67C4.28 1.99976 2 4.37976 2 7.91976V16.0898C2 19.6198 4.28 21.9998 7.67 21.9998H16.34C19.73 21.9998 22 19.6198 22 16.0898V7.91976C22 4.37976 19.73 1.99976 16.34 1.99976Z" fill="currentColor"></path>                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1246 8.18921C11.1246 8.67121 11.5156 9.06421 11.9946 9.06421C12.4876 9.06421 12.8796 8.67121 12.8796 8.18921C12.8796 7.70721 12.4876 7.31421 12.0046 7.31421C11.5196 7.31421 11.1246 7.70721 11.1246 8.18921ZM12.8696 11.362C12.8696 10.88 12.4766 10.487 11.9946 10.487C11.5126 10.487 11.1196 10.88 11.1196 11.362V15.782C11.1196 16.264 11.5126 16.657 11.9946 16.657C12.4766 16.657 12.8696 16.264 12.8696 15.782V11.362Z" fill="currentColor"></path>
-                            </svg>
-                        </i>
-                        <span class="item-name">Privacy Policy</span>
-                    </a>
-                </li>
-                <!-- SIDE NAVBAR BUTTONS --> 
+                              <!-- SIDE NAVBAR BUTTONS --> 
+                              <li class="nav-item ">
+                                <a class="nav-link " aria-current="page" href="{% url 'pages:about' %}">
+                                    <i class="icon">
+                                        <svg width="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.4" d="M2 11.0786C2.05 13.4166 2.19 17.4156 2.21 17.8566C2.281 18.7996 2.642 19.7526 3.204 20.4246C3.986 21.3676 4.949 21.7886 6.292 21.7886C8.148 21.7986 10.194 21.7986 12.181 21.7986C14.176 21.7986 16.112 21.7986 17.747 21.7886C19.071 21.7886 20.064 21.3566 20.836 20.4246C21.398 19.7526 21.759 18.7896 21.81 17.8566C21.83 17.4856 21.93 13.1446 21.99 11.0786H2Z" fill="currentColor"></path>                                <path d="M11.2451 15.3843V16.6783C11.2451 17.0923 11.5811 17.4283 11.9951 17.4283C12.4091 17.4283 12.7451 17.0923 12.7451 16.6783V15.3843C12.7451 14.9703 12.4091 14.6343 11.9951 14.6343C11.5811 14.6343 11.2451 14.9703 11.2451 15.3843Z" fill="currentColor"></path>                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.211 14.5565C10.111 14.9195 9.762 15.1515 9.384 15.1015C6.833 14.7455 4.395 13.8405 2.337 12.4815C2.126 12.3435 2 12.1075 2 11.8555V8.38949C2 6.28949 3.712 4.58149 5.817 4.58149H7.784C7.972 3.12949 9.202 2.00049 10.704 2.00049H13.286C14.787 2.00049 16.018 3.12949 16.206 4.58149H18.183C20.282 4.58149 21.99 6.28949 21.99 8.38949V11.8555C21.99 12.1075 21.863 12.3425 21.654 12.4815C19.592 13.8465 17.144 14.7555 14.576 15.1105C14.541 15.1155 14.507 15.1175 14.473 15.1175C14.134 15.1175 13.831 14.8885 13.746 14.5525C13.544 13.7565 12.821 13.1995 11.99 13.1995C11.148 13.1995 10.433 13.7445 10.211 14.5565ZM13.286 3.50049H10.704C10.031 3.50049 9.469 3.96049 9.301 4.58149H14.688C14.52 3.96049 13.958 3.50049 13.286 3.50049Z" fill="currentColor"></path>
+                                        </svg>
+                                    </i>
+                                    <span class="item-name">About Us</span>
+                                </a>
+                            </li>
+                            <!-- SIDE NAVBAR BUTTONS --> 
             
+            
+            
+            
+                            <!-- SIDE NAVBAR BUTTONS --> 
+                            <li class="nav-item ">
+                                <a class="nav-link " aria-current="page" href="{% url 'pages:privacy_policy'%}">
+                                    <i class="icon">
+                                        <svg width="20" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path opacity="0.4" d="M16.34 1.99976H7.67C4.28 1.99976 2 4.37976 2 7.91976V16.0898C2 19.6198 4.28 21.9998 7.67 21.9998H16.34C19.73 21.9998 22 19.6198 22 16.0898V7.91976C22 4.37976 19.73 1.99976 16.34 1.99976Z" fill="currentColor"></path>                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1246 8.18921C11.1246 8.67121 11.5156 9.06421 11.9946 9.06421C12.4876 9.06421 12.8796 8.67121 12.8796 8.18921C12.8796 7.70721 12.4876 7.31421 12.0046 7.31421C11.5196 7.31421 11.1246 7.70721 11.1246 8.18921ZM12.8696 11.362C12.8696 10.88 12.4766 10.487 11.9946 10.487C11.5126 10.487 11.1196 10.88 11.1196 11.362V15.782C11.1196 16.264 11.5126 16.657 11.9946 16.657C12.4766 16.657 12.8696 16.264 12.8696 15.782V11.362Z" fill="currentColor"></path>
+                                        </svg>
+                                    </i>
+                                    <span class="item-name">Privacy Policy</span>
+                                </a>
+                            </li>
+                            <!-- SIDE NAVBAR BUTTONS --> 
 
-
-
-
-
-
-
-
+              {% if request.user.is_authenticated %}  
 
 
 
@@ -249,24 +228,32 @@
             {% endif %}
 
 
-
-
-
-
-
-
             <div id="sidebar-footer" class="position-relative sidebar-footer">
-                <div class="card mx-4">
-                    <div class="card-body">
-                        <div class="sidebarbottom-content">
-                            <div class="image">
-                                <img src="{% static 'pages/images/coins/13.png' %}" alt="User-Profile" class="img-fluid">
+                {% if request.user.is_authenticated %}
+                    <div class="card mx-4">
+                        <div class="card-body">
+                            <div class="sidebarbottom-content">
+                                <div class="image">
+                                    <img src="{% static 'pages/images/coins/13.png' %}" alt="User-Profile" class="img-fluid">
+                                </div>
+                                <p class="mb-0">Secure your CRYPTO</p>
+                                <button type="button" class="btn btn-primary mt-3">Deposit</button>
                             </div>
-                            <p class="mb-0">Be more secure with Pro Feature</p>
-                            <button type="button" class="btn btn-primary mt-3">Upgrade Now</button>
                         </div>
                     </div>
-                </div>
+                {% else %}
+                    <div class="card mx-4">
+                        <div class="card-body">
+                            <div class="sidebarbottom-content">
+                                <div class="image">
+                                    <img src="{% static 'pages/images/coins/13.png' %}" alt="User-Profile" class="img-fluid">
+                                </div>
+                                <p class="mb-0">Secure your CRYPTO</p>
+                                <button type="button" class="btn btn-primary mt-3">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                {%endif%}
             </div>
         </div>
     </aside>    <main class="main-content">
