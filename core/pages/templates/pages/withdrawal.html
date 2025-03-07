@@ -4,23 +4,52 @@
     <div class="col-md-6">
       <div class="card shadow-lg rounded">
         <div class="card-header bg-danger text-white text-center">
+          <span class="mt-2">{{ user.username }}</span>
+          <h4 class="counter" style="visibility: visible">
+            ${{ profile.main_balance }}
+          </h4>
           <h4>Withdrawal Request</h4>
         </div>
         <div class="card-body">
           <form id="withdrawalForm">
             {% csrf_token %}
+
             <!-- Crypto Wallet Input -->
             <div class="mb-3">
-              <label for="wallet" class="form-label"
-                >Crypto Wallet Address</label
-              >
+              <label for="wallet" class="form-label">Account Number</label>
               <input
                 type="text"
                 class="form-control"
                 id="wallet"
                 name="wallet"
-                placeholder="Enter your wallet address"
+                placeholder="Enter your Account Number"
                 required
+              />
+            </div>
+
+            <!-- Account Holder Name Input -->
+            <div class="mb-3">
+              <label for="accountHolder" class="form-label"
+                >Account Holder Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="accountHolder"
+                name="accountHolder"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <!-- Sort Code Input -->
+            <div class="mb-3">
+              <label for="sortCode" class="form-label">Sort Code</label>
+              <input
+                type="text"
+                class="form-control"
+                id="sortCode"
+                name="sortCode"
+                placeholder="Enter sort code"
               />
             </div>
 

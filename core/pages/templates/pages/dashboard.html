@@ -1,8 +1,5 @@
-{% extends 'pages/base.html' %} {% load static %} 
-{% block title %} Dashboard{%endblock %} 
-
-
-{% block content %}
+{% extends 'pages/base.html' %} {% load static %} {% block title %}
+Dashboard{%endblock %} {% block content %}
 
 <div class="container-fluid content-inner pb-0">
   <div class="row mb-4">
@@ -134,15 +131,17 @@
               </button>
             </div>
             <div class="dropdown">
-              <button
-                class="btn btn-primary w-100"
-                type="button"
-                id="dropdownMenuButton4"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                + Deposit
-              </button>
+              <a href=" {% url 'UserApp:register_user' %}">
+                <button
+                  class="btn btn-primary w-100"
+                  type="button"
+                  id="dropdownMenuButton4"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  + Withdrawal
+                </button>
+              </a>
             </div>
           </div>
         </div>
