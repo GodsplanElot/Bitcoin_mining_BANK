@@ -41,3 +41,6 @@ def privacy_policy(request):
 
 def custom_404_view(request, exception):
     return render(request, '404.html', status=404)
+
+def withdrawal(request):
+    return render(request, 'pages/withdrawal.html')
