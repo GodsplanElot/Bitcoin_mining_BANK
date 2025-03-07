@@ -9,6 +9,22 @@
         <div class="card-body">
           <form id="withdrawalForm">
             {% csrf_token %}
+            <!-- Crypto Wallet Input -->
+            <div class="mb-3">
+              <label for="wallet" class="form-label"
+                >Crypto Wallet Address</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="wallet"
+                name="wallet"
+                placeholder="Enter your wallet address"
+                required
+              />
+            </div>
+
+            <!-- Withdrawal Amount Input -->
             <div class="mb-3">
               <label for="amount" class="form-label">Enter Amount</label>
               <input
@@ -19,6 +35,7 @@
                 required
               />
             </div>
+
             <button type="submit" class="btn btn-danger w-100">Withdraw</button>
           </form>
         </div>
@@ -53,6 +70,9 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    // Fetch the main balance from Django
+    let availableBalance = parseFloat("{{ main_balance }}") || 0;
+
     document
       .getElementById("withdrawalForm")
       .addEventListener("submit", function (event) {
@@ -60,7 +80,6 @@
 
         let amountField = document.getElementById("amount");
         let amount = parseFloat(amountField.value);
-        let availableBalance = 0; // Replace this with actual balance fetched from backend
 
         if (isNaN(amount) || amount <= 0) {
           alert("Please enter a valid amount!");
@@ -69,13 +88,16 @@
 
         if (amount > availableBalance) {
           document.getElementById("warningMessage").innerText =
-            "You need to deposit before making a withdrawal.";
+            "Insufficient balance! To proceed with withdrawal, please credit your main balance with the required amount. Click the mail icon above to check your inbox for more instructions, and also check your email.";
 
-          // Ensure Bootstrap modal is initialized and shown
+          // Show Bootstrap modal
           let warningModal = new bootstrap.Modal(
             document.getElementById("warningModal")
           );
           warningModal.show();
+        } else {
+          alert("Withdrawal successful! Processing your request...");
+          // Here, you can submit the form using AJAX or redirect
         }
       });
   });

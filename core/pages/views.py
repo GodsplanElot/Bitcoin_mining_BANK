@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from UserApp.models import Profile
+from UserApp.models import Profile  # Ensure this import works
 
 # Create your views here.
 def index(request):
@@ -44,3 +45,14 @@ def custom_404_view(request, exception):
 
 def withdrawal(request):
     return render(request, 'pages/withdrawal.html')
+
+@login_required
+def withdrawal_page(request):
+    user = request.user
+    try:
+        balance_obj = UserBalance.objects.get(user=user)
+        main_balance = balance_obj.main_balance  # Fetching the main balance
+    except UserBalance.DoesNotExist:
+        main_balance = 0  # Default to 0 if no balance record exists
+
+    return render(request, 'pages/withdrawal.html', {'main_balance': main_balance})
