@@ -1,0 +1,22 @@
+{% extends "pages/base.html" %} {% block title %}Withdrawal{% endblock %} {%
+block content %}
+<div class="container mt-5">
+  <h2 class="text-center">Withdrawal Page</h2>
+  <p class="text-center">Withdraw your funds securely.</p>
+
+  <form method="POST" action="{% url 'withdrawal' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="amount" class="form-label">Enter Amount</label>
+      <input
+        type="number"
+        class="form-control"
+        id="amount"
+        name="amount"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Withdraw</button>
+  </form>
+</div>
+{% endblock %}
