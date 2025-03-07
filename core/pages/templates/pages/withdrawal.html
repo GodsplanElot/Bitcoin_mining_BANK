@@ -1,22 +1,84 @@
-{% extends "pages/base.html" %} {% block title %}Withdrawal{% endblock %} {%
-block content %}
+{% extends 'pages/base.html' %} {% block content %}
 <div class="container mt-5">
-  <h2 class="text-center">Withdrawal Page</h2>
-  <p class="text-center">Withdraw your funds securely.</p>
-
-  <form method="POST" action="{% url 'withdrawal' %}">
-    {% csrf_token %}
-    <div class="mb-3">
-      <label for="amount" class="form-label">Enter Amount</label>
-      <input
-        type="number"
-        class="form-control"
-        id="amount"
-        name="amount"
-        required
-      />
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg rounded">
+        <div class="card-header bg-danger text-white text-center">
+          <h4>Withdrawal Request</h4>
+        </div>
+        <div class="card-body">
+          <form id="withdrawalForm">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="amount" class="form-label">Enter Amount</label>
+              <input
+                type="number"
+                class="form-control"
+                id="amount"
+                name="amount"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-danger w-100">Withdraw</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary w-100">Withdraw</button>
-  </form>
+  </div>
 </div>
+
+<!-- Bootstrap Modal (Warning Message) -->
+<div class="modal fade" id="warningModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-warning">
+        <h5 class="modal-title">Withdrawal Not Allowed</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p id="warningMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document
+      .getElementById("withdrawalForm")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Stop form submission
+
+        let amountField = document.getElementById("amount");
+        let amount = parseFloat(amountField.value);
+        let availableBalance = 0; // Replace this with actual balance fetched from backend
+
+        if (isNaN(amount) || amount <= 0) {
+          alert("Please enter a valid amount!");
+          return;
+        }
+
+        if (amount > availableBalance) {
+          document.getElementById("warningMessage").innerText =
+            "You need to deposit before making a withdrawal.";
+
+          // Ensure Bootstrap modal is initialized and shown
+          let warningModal = new bootstrap.Modal(
+            document.getElementById("warningModal")
+          );
+          warningModal.show();
+        }
+      });
+  });
+</script>
+
 {% endblock %}
